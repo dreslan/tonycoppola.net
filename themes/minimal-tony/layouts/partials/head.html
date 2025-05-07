@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description | default .Summary }}{{ end }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- RSS -->
+{{ range .AlternativeOutputFormats }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+{{ end }}
+
+<!-- Stylesheets -->
+{{ $style := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+<!-- Open Graph & Twitter Card -->
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}

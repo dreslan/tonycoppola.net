@@ -1,0 +1,84 @@
+baseURL: "https://tonycoppola.net/"
+languageCode: "en-us"
+title: "Tony Coppola"
+theme: "minimal-tony"
+enableEmoji: true
+enableGitInfo: true
+enableRobotsTXT: true
+summaryLength: 30
+
+# Build settings
+build:
+  writeStats: true
+
+# Theme parameters
+params:
+  author: "Tony Coppola"
+  description: "Personal website of Tony Coppola"
+  images: ["images/social-share.jpg"]
+  defaultTheme: "light"  # Options are "light", "dark", or "auto"
+  mainSections: ["blog", "essays", "projects"]
+  dateFormat: "January 2, 2006"
+  
+  # Social links
+  social:
+    twitter: "tonybyte"
+    github: "dreslan"
+    linkedin: "ancopp"
+    # Add other social platforms as needed
+
+# Menu configuration
+menu:
+  main:
+    - identifier: "blog"
+      name: "Blog"
+      url: "/blog/"
+      weight: 10
+    - identifier: "essays"
+      name: "Essays"
+      url: "/essays/"
+      weight: 20
+    - identifier: "projects"
+      name: "Projects"
+      url: "/projects/"
+      weight: 30
+    - identifier: "series"
+      name: "Series"
+      url: "/series/"
+      weight: 40
+    - identifier: "videos"
+      name: "Videos"
+      url: "/videos/"
+      weight: 50
+    - identifier: "about"
+      name: "About"
+      url: "/about/"
+      weight: 60
+    - identifier: "resume"
+      name: "Resume"
+      url: "/resume/"
+      weight: 70
+    - identifier: "hire-me"
+      name: "Hire Me"
+      url: "/resume/hire-me/"
+      weight: 80
+    - identifier: "support"
+      name: "Buy Me a Coffee"
+      url: "/support/"
+      weight: 90
+
+# Taxonomies
+taxonomies:
+  tag: "tags"
+  category: "categories"
+  series: "series"
+
+# Permalinks
+permalinks:
+  blog: "/blog/:year/:month/:slug/"
+  essays: "/essays/:slug/"
+  
+# Output formats
+outputs:
+  home: ["HTML", "RSS", "JSON"]
+  section: ["HTML", "RSS"]
