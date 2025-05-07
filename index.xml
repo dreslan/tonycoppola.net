@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tony Coppola</title><link>https://tonycoppola.net/</link><description>Recent content on Tony Coppola</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 07 May 2025 00:05:26 -0400</lastBuildDate><atom:link href="https://tonycoppola.net/index.xml" rel="self" type="application/rss+xml"/><item><title>Hire Me</title><link>https://tonycoppola.net/resume/hire-me/</link><pubDate>Tue, 06 May 2025 23:48:01 -0400</pubDate><guid>https://tonycoppola.net/resume/hire-me/</guid><description>&lt;h1 id="why-you-should-hire-me">Why You Should Hire Me&lt;/h1>
-&lt;p>I specialize in&amp;hellip;&lt;/p></description></item><item><title>Support My Work</title><link>https://tonycoppola.net/support/</link><pubDate>Tue, 06 May 2025 23:48:01 -0400</pubDate><guid>https://tonycoppola.net/support/</guid><description>&lt;h1 id="buy-me-a-coffee">Buy Me a Coffee&lt;/h1>
-&lt;p>If you find my work valuable&amp;hellip;&lt;/p></description></item><item><title>Welcome to My New Site</title><link>https://tonycoppola.net/blog/2025/05/welcome-to-my-new-site/</link><pubDate>Tue, 06 May 2025 12:00:00 -0400</pubDate><guid>https://tonycoppola.net/blog/2025/05/welcome-to-my-new-site/</guid><description>&lt;h1 id="welcome-to-my-new-website">Welcome to My New Website&lt;/h1>
-&lt;p>This is the inaugural post on my new personal website. I built this site using Hugo, a fast and flexible static site generator. The site features a clean, minimalist design with both light and dark modes for comfortable reading in any environment.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tony Coppola</title>
+    <link>https://tonycoppola.net/</link>
+    <description>Recent content on Tony Coppola</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 May 2025 00:05:26 -0400</lastBuildDate>
+    <atom:link href="https://tonycoppola.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hire Me</title>
+      <link>https://tonycoppola.net/resume/hire-me/</link>
+      <pubDate>Tue, 06 May 2025 23:48:01 -0400</pubDate>
+      <guid>https://tonycoppola.net/resume/hire-me/</guid>
+      <description>&lt;h1 id=&#34;why-you-should-hire-me&#34;&gt;Why You Should Hire Me&lt;/h1&gt;&#xA;&lt;p&gt;I specialize in&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Support My Work</title>
+      <link>https://tonycoppola.net/support/</link>
+      <pubDate>Tue, 06 May 2025 23:48:01 -0400</pubDate>
+      <guid>https://tonycoppola.net/support/</guid>
+      <description>&lt;h1 id=&#34;buy-me-a-coffee&#34;&gt;Buy Me a Coffee&lt;/h1&gt;&#xA;&lt;p&gt;If you find my work valuable&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Welcome to My New Site</title>
+      <link>https://tonycoppola.net/blog/2025/05/welcome-to-my-new-site/</link>
+      <pubDate>Tue, 06 May 2025 12:00:00 -0400</pubDate>
+      <guid>https://tonycoppola.net/blog/2025/05/welcome-to-my-new-site/</guid>
+      <description>&lt;h1 id=&#34;welcome-to-my-new-website&#34;&gt;Welcome to My New Website&lt;/h1&gt;&#xA;&lt;p&gt;This is the inaugural post on my new personal website. I built this site using Hugo, a fast and flexible static site generator. The site features a clean, minimalist design with both light and dark modes for comfortable reading in any environment.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
