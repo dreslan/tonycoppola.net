@@ -1,7 +1,7 @@
 name = "Minimal Tony"
 license = "MIT"
-licenselink = "https://github.com/dreslan/minimal-tony/blob/master/LICENSE"
-description = "A minimal, black and white theme with dark/light mode toggle"
+licenselink = "https://github.com/yourusername/minimal-tony/blob/master/LICENSE"
+description = "A minimal, black and white theme with dark/light mode toggle, designed with assistance from Claude by Anthropic"
 homepage = "https://tonycoppola.net/"
 tags = ["blog", "minimal", "responsive", "dark mode", "light mode"]
 features = ["blog", "responsive", "dark mode"]
