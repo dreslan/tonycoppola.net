@@ -34,22 +34,22 @@ menu:
       name: "Blog"
       url: "/blog/"
       weight: 10
-    - identifier: "essays"
-      name: "Essays"
-      url: "/essays/"
-      weight: 20
-    - identifier: "projects"
-      name: "Projects"
-      url: "/projects/"
-      weight: 30
-    - identifier: "series"
-      name: "Series"
-      url: "/series/"
-      weight: 40
-    - identifier: "videos"
-      name: "Videos"
-      url: "/videos/"
-      weight: 50
+    # - identifier: "essays"
+    #   name: "Essays"
+    #   url: "/essays/"
+    #   weight: 20
+    # - identifier: "projects"
+    #   name: "Projects"
+    #   url: "/projects/"
+    #   weight: 30
+    # - identifier: "series"
+    #   name: "Series"
+    #   url: "/series/"
+    #   weight: 40
+    # - identifier: "videos"
+    #   name: "Videos"
+    #   url: "/videos/"
+    #   weight: 50
     - identifier: "about"
       name: "About"
       url: "/about/"

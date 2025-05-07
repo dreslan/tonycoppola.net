@@ -1,6 +1,6 @@
 ---
 title: "Hire Me"
-date: $(date +"%Y-%m-%dT%H:%M:%S%z")
+date: 2025-05-06T23:48:01-0400
 draft: false
 ---
 
