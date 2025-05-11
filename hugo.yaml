@@ -30,18 +30,18 @@ params:
 # Menu configuration
 menu:
   main:
-    - identifier: "blog"
-      name: "Blog"
-      url: "/blog/"
+    - identifier: "posts"
+      name: "Posts"
+      url: "/posts/"
       weight: 10
     # - identifier: "essays"
     #   name: "Essays"
     #   url: "/essays/"
     #   weight: 20
-    # - identifier: "projects"
-    #   name: "Projects"
-    #   url: "/projects/"
-    #   weight: 30
+    - identifier: "projects"
+      name: "Projects"
+      url: "/projects/"
+      weight: 30
     # - identifier: "series"
     #   name: "Series"
     #   url: "/series/"
@@ -58,14 +58,14 @@ menu:
       name: "Resume"
       url: "/resume/"
       weight: 70
-    - identifier: "hire-me"
-      name: "Hire Me"
-      url: "/resume/hire-me/"
-      weight: 80
-    - identifier: "support"
-      name: "Buy Me a Coffee"
-      url: "/support/"
-      weight: 90
+    # - identifier: "hire-me"
+    #   name: "Hire Me"
+    #   url: "/resume/hire-me/"
+    #   weight: 80
+    # - identifier: "support"
+    #   name: "Buy Me a Coffee"
+    #   url: "/support/"
+    #   weight: 90
 
 # Taxonomies
 taxonomies:
@@ -75,7 +75,7 @@ taxonomies:
 
 # Permalinks
 permalinks:
-  blog: "/blog/:year/:month/:slug/"
+  posts: "/posts/:year/:month/:slug/"
   essays: "/essays/:slug/"
   
 # Output formats

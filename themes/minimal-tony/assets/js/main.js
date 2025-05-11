@@ -1,4 +1,27 @@
-// Dark/light mode toggle functionality
+// Add this script to the <head> section of your base template
+// This prevents the flash by applying the theme immediately before rendering
+const blockingScript = `
+(function() {
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  
+  // Determine which theme to use
+  let currentTheme;
+  if (savedTheme) {
+    currentTheme = savedTheme;
+  } else {
+    currentTheme = prefersDarkScheme.matches ? 'dark' : 'light';
+  }
+  
+  // Apply theme to document immediately
+  document.documentElement.classList.add(currentTheme + '-theme');
+})();
+`;
+
+// Add this to your head section as an inline script
+document.write('<script>' + blockingScript + '</script>');
+
+// Then update your existing script for the toggle functionality
 document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('theme-toggle');
   const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -6,25 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to set the theme
   const setTheme = (mode) => {
     if (mode === 'dark') {
-      document.body.classList.remove('light-theme');
-      document.body.classList.add('dark-theme');
+      document.documentElement.classList.remove('light-theme');
+      document.documentElement.classList.add('dark-theme');
       localStorage.setItem('theme', 'dark');
     } else {
-      document.body.classList.remove('dark-theme');
-      document.body.classList.add('light-theme');
+      document.documentElement.classList.remove('dark-theme');
+      document.documentElement.classList.add('light-theme');
       localStorage.setItem('theme', 'light');
     }
   };
   
-  // Check for saved theme preference or use the system preference
-  const savedTheme = localStorage.getItem('theme');
-  
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else {
-    // If no saved preference, use the system preference
-    setTheme(prefersDarkScheme.matches ? 'dark' : 'light');
-  }
+  // We don't need to set the theme again here since we already did it
+  // in the blocking script above
   
   // Handle toggle button click
   themeToggle.addEventListener('click', () => {
@@ -39,23 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
       setTheme(e.matches ? 'dark' : 'light');
     }
   });
-
+  
   // Handle mobile navigation if needed for smaller screens
   const setupMobileNav = () => {
     // This can be expanded upon if you need a mobile menu toggle
     // For now, your navigation is simple enough that it can be responsive with CSS
   };
-  
   setupMobileNav();
   
   // Add smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      
       const targetId = this.getAttribute('href').substring(1);
       if (!targetId) return; // Skip if it's just "#"
-      
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({

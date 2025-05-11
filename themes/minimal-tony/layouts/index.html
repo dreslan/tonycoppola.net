@@ -1,0 +1,59 @@
+{{ define "main" }}
+<div class="home-container">
+    <div class="intro">
+        <p>{{ .Site.Params.description }}</p>
+        {{ .Content }}
+    </div>
+
+    <section class="recent-posts">
+        <h2>Posts</h2>
+        <ul>
+            {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+            <li>
+                <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+        <a href="/posts/">View all posts →</a>
+    </section>
+
+    <section class="recent-essays">
+        <h2>Essays</h2>
+        <ul>
+            {{ range first 5 (where .Site.RegularPages "Section" "essays") }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+        <a href="/essays/">View all essays →</a>
+    </section>
+
+    <section class="recent-projects">
+        <h2>Projects</h2>
+        <ul>
+            {{ range first 5 (where .Site.RegularPages "Section" "projects") }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <p>{{ .Description }}</p>
+            </li>
+            {{ end }}
+        </ul>
+        <a href="/projects/">Projects →</a>
+    </section>
+
+    <section class="recent-questions">
+        <h2>Questions</h2>
+        <ul>
+            {{ range first 5 (where .Site.RegularPages "Section" "questions") }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <p>{{ .Description }}</p>
+            </li>
+            {{ end }}
+        </ul>
+        <a href="/projects/">Projects →</a>
+    </section>
+</div>
+{{ end }}

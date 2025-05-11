@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 <head>
+    {{ partial "scripts.html" . }}
     {{ partial "head.html" . }}
 </head>
 <body class="light-theme">
@@ -11,6 +12,5 @@
         </main>
         {{ partial "footer.html" . }}
     </div>
-    {{ partial "scripts.html" . }}
 </body>
 </html>

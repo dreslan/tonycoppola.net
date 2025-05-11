@@ -382,3 +382,32 @@ hr {
     gap: var(--spacing-unit);
   }
 }
+
+.home-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.intro {
+  margin-bottom: 3rem;
+}
+
+.recent-posts, .recent-projects {
+  margin-bottom: 3rem;
+}
+
+.recent-posts ul, .recent-projects ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.recent-posts li, .recent-projects li {
+  margin-bottom: 1rem;
+}
+
+.post-date {
+  font-size: 0.9rem;
+  color: #666;
+  margin-left: 0.5rem;
+}
