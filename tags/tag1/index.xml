@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tag1 on Tony Coppola</title>
+    <link>https://tonycoppola.net/tags/tag1/</link>
+    <description>Recent content in Tag1 on Tony Coppola</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 May 2025 17:31:17 -0400</lastBuildDate>
+    <atom:link href="https://tonycoppola.net/tags/tag1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project Name</title>
+      <link>https://tonycoppola.net/projects/example/</link>
+      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://tonycoppola.net/projects/example/</guid>
+      <description>&lt;h2 id=&#34;project-overview&#34;&gt;Project Overview&lt;/h2&gt;&#xA;&lt;p&gt;Description of your project.&lt;/p&gt;&#xA;&lt;h2 id=&#34;technologies-used&#34;&gt;Technologies Used&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Tech 1&lt;/li&gt;&#xA;&lt;li&gt;Tech 2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/yourusername/project&#34;&gt;GitHub Repository&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://demo-url.com&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>
