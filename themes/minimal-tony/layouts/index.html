@@ -1,59 +1,85 @@
 {{ define "main" }}
 <div class="home-container">
     <div class="intro">
-        <p>{{ .Site.Params.description }}</p>
         {{ .Content }}
+
+        <div class="intro-meta">
+            {{ with .Site.Params.social }}
+            <div class="social-links-home">
+                {{ with .github }}<a href="https://github.com/{{ . }}" target="_blank" aria-label="GitHub">GitHub</a>{{ end }}
+                {{ with .twitter }}<a href="https://twitter.com/{{ . }}" target="_blank" aria-label="Twitter">Twitter</a>{{ end }}
+                {{ with .linkedin }}<a href="https://linkedin.com/in/{{ . }}" target="_blank" aria-label="LinkedIn">LinkedIn</a>{{ end }}
+            </div>
+            {{ end }}
+        </div>
     </div>
 
-    <section class="recent-posts">
-        <h2>Posts</h2>
-        <ul>
-            {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
-            <li>
-                <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </li>
-            {{ end }}
-        </ul>
-        <a href="/posts/">View all posts →</a>
-    </section>
+    <div class="home-grid">
+        <section class="recent-posts">
+            <h2>Recent Posts</h2>
+            <ul>
+                {{ $posts := where .Site.RegularPages "Section" "posts" }}
+                {{ if gt (len $posts) 0 }}
+                    {{ range first 3 $posts }}
+                    <li class="post-item-home">
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                        {{ with .Summary }}
+                        <p class="post-summary">{{ . | truncate 120 }}</p>
+                        {{ end }}
+                        {{ with .Params.tags }}
+                        <div class="post-tags">
+                            {{ range first 2 . }}
+                            <span class="tag">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                    </li>
+                    {{ end }}
+                {{ else }}
+                    <li><em>Coming soon...</em></li>
+                {{ end }}
+            </ul>
+            <a href="/posts/" class="section-link">View all posts →</a>
+        </section>
 
-    <section class="recent-essays">
-        <h2>Essays</h2>
-        <ul>
-            {{ range first 5 (where .Site.RegularPages "Section" "essays") }}
-            <li>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </li>
+        <section class="sidebar">
+            {{ $projectPages := where .Site.RegularPages "Section" "projects" }}
+            {{ if gt (len $projectPages) 0 }}
+            <div class="featured-projects">
+                <h2>Projects</h2>
+                <ul>
+                    {{ range first 2 $projectPages }}
+                    <li>
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        {{ with .Description }}
+                        <p>{{ . | truncate 80 }}</p>
+                        {{ end }}
+                    </li>
+                    {{ end }}
+                </ul>
+                <a href="/projects/" class="section-link">View all →</a>
+            </div>
             {{ end }}
-        </ul>
-        <a href="/essays/">View all essays →</a>
-    </section>
 
-    <section class="recent-projects">
-        <h2>Projects</h2>
-        <ul>
-            {{ range first 5 (where .Site.RegularPages "Section" "projects") }}
-            <li>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-                <p>{{ .Description }}</p>
-            </li>
-            {{ end }}
-        </ul>
-        <a href="/projects/">Projects →</a>
-    </section>
+            <div class="about-snippet">
+                <h2>About Me</h2>
+                <p>{{ .Site.Params.description }}</p>
+                <p>Explore my <a href="/about/">full bio</a> or view my <a href="/resume/">resume</a>.</p>
+            </div>
 
-    <section class="recent-questions">
-        <h2>Questions</h2>
-        <ul>
-            {{ range first 5 (where .Site.RegularPages "Section" "questions") }}
-            <li>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-                <p>{{ .Description }}</p>
-            </li>
+            {{ $tags := $.Site.Taxonomies.tags.ByCount }}
+            {{ if gt (len $tags) 0 }}
+            <div class="popular-topics">
+                <h2>Popular Topics</h2>
+                <div class="tag-cloud">
+                    {{ range first 8 $tags }}
+                    <a href="{{ .Page.Permalink }}" class="tag">{{ .Page.Title }} ({{ .Count }})</a>
+                    {{ end }}
+                </div>
+            </div>
             {{ end }}
-        </ul>
-        <a href="/projects/">Projects →</a>
-    </section>
+        </section>
+    </div>
 </div>
 {{ end }}

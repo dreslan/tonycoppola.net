@@ -1,33 +1,19 @@
-// Add this script to the <head> section of your base template
-// This prevents the flash by applying the theme immediately before rendering
-const blockingScript = `
-(function() {
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+// Shared utility functions for theme management
+const themeUtils = {
+  // Get the user's preferred theme from localStorage or system preferences
+  getPreferredTheme: function() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    if (savedTheme) {
+      return savedTheme;
+    } else {
+      return prefersDarkScheme.matches ? 'dark' : 'light';
+    }
+  },
   
-  // Determine which theme to use
-  let currentTheme;
-  if (savedTheme) {
-    currentTheme = savedTheme;
-  } else {
-    currentTheme = prefersDarkScheme.matches ? 'dark' : 'light';
-  }
-  
-  // Apply theme to document immediately
-  document.documentElement.classList.add(currentTheme + '-theme');
-})();
-`;
-
-// Add this to your head section as an inline script
-document.write('<script>' + blockingScript + '</script>');
-
-// Then update your existing script for the toggle functionality
-document.addEventListener('DOMContentLoaded', () => {
-  const themeToggle = document.getElementById('theme-toggle');
-  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-  
-  // Function to set the theme
-  const setTheme = (mode) => {
+  // Apply the theme to the document
+  setTheme: function(mode) {
     if (mode === 'dark') {
       document.documentElement.classList.remove('light-theme');
       document.documentElement.classList.add('dark-theme');
@@ -37,22 +23,31 @@ document.addEventListener('DOMContentLoaded', () => {
       document.documentElement.classList.add('light-theme');
       localStorage.setItem('theme', 'light');
     }
-  };
-  
-  // We don't need to set the theme again here since we already did it
-  // in the blocking script above
+  }
+};
+
+// Immediately apply theme on page load to prevent flash
+(function() {
+  const currentTheme = themeUtils.getPreferredTheme();
+  themeUtils.setTheme(currentTheme);
+})();
+
+// Set up event listeners once DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById('theme-toggle');
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
   
   // Handle toggle button click
   themeToggle.addEventListener('click', () => {
-    const currentTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
-    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    const currentTheme = themeUtils.getPreferredTheme();
+    themeUtils.setTheme(currentTheme === 'dark' ? 'light' : 'dark');
   });
   
   // Listen for system preference changes
   prefersDarkScheme.addEventListener('change', (e) => {
     // Only update theme automatically if user hasn't set a preference
     if (!localStorage.getItem('theme')) {
-      setTheme(e.matches ? 'dark' : 'light');
+      themeUtils.setTheme(e.matches ? 'dark' : 'light');
     }
   });
   
