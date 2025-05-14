@@ -2,6 +2,6 @@
 title: "Home"
 ---
 
-Tony Coppola is a technologist concerned with the progress of AI. He created this website to explore the topic in more depth.
+Tony Coppola is a technologist and generally curious person. He created this website to explore topics of interest. Right now he is primarily interested (alarmed) in how rapidly AI is progressing, so expect a lot of content around that.
 
 > "One way of looking at human creativity is as a process of pulling balls out of a giant urn. The balls represent possible ideas, discoveries, technological inventions... What we haven't extracted, so far, is a black ball: a technology that invariably or by default destroys the civilization that invents it." — Nick Bostrom
