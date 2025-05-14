@@ -8,7 +8,7 @@ I'm a technologist and generally curious person. I often go down rabbit holes an
 
 Recently, I've had a growing interest in the field of AI safety and alignment.
 
-To motivate this interest, consider the following quote by Nick Bostrom:
+To motivate this interest, consider the following quote by Nick Bostrom from his paper, [The Vulnerable World Hypothesis](https://nickbostrom.com/papers/vulnerable.pdf):
 
 > "One way of looking at human creativity is as a process of pulling balls out of a giant urn. The balls represent possible ideas, discoveries, technological inventions... What we haven't extracted, so far, is a black ball: a technology that invariably or by default destroys the civilization that invents it."
 
