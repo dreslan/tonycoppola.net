@@ -381,11 +381,31 @@ hr {
   gap: 2.5rem;
 }
 
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
 .recent-posts,
 .featured-projects,
-.about-snippet,
 .popular-topics {
   margin-bottom: 2.5rem;
+}
+
+.project-item-home {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.project-item-home:last-child {
+  border-bottom: none;
+}
+
+.project-summary {
+  margin-top: 0.5rem;
+  color: var(--color-text-secondary);
 }
 
 .recent-posts ul,
@@ -456,6 +476,15 @@ hr {
 @media (max-width: 768px) {
   .home-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .main-content {
+    gap: 2rem;
+  }
+
+  .tag-cloud {
+    gap: 0.4rem;
   }
 }
 
