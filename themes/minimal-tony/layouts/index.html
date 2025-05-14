@@ -4,68 +4,49 @@
         {{ .Content }}
     </div>
 
-    <div class="home-grid">
-        <section class="main-content">
-            <section class="recent-posts">
-                <h2>Posts</h2>
-                <ul>
-                    {{ $posts := where .Site.RegularPages "Section" "posts" }}
-                    {{ if gt (len $posts) 0 }}
-                        {{ range first 3 $posts }}
-                        <li class="post-item-home">
-                            <a href="{{ .Permalink }}">{{ .Title }}</a>
-                            <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
-                            {{ with .Summary }}
-                            <p class="post-summary">{{ . | truncate 120 }}</p>
-                            {{ end }}
-                            {{ with .Params.tags }}
-                            <div class="post-tags">
-                                {{ range first 2 . }}
-                                <span class="tag">{{ . }}</span>
-                                {{ end }}
-                            </div>
-                            {{ end }}
-                        </li>
+    <section class="recent-posts">
+        <h2>Posts</h2>
+        <ul>
+            {{ $posts := where .Site.RegularPages "Section" "posts" }}
+            {{ if gt (len $posts) 0 }}
+                {{ range first 3 $posts }}
+                <li class="post-item-home">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                    {{ with .Summary }}
+                    <p class="post-summary">{{ . | truncate 120 }}</p>
+                    {{ end }}
+                    {{ with .Params.tags }}
+                    <div class="post-tags">
+                        {{ range first 2 . }}
+                        <span class="tag">{{ . }}</span>
                         {{ end }}
-                    {{ else }}
-                        <li><em>Coming soon...</em></li>
+                    </div>
                     {{ end }}
-                </ul>
-                <a href="/posts/" class="section-link">View all posts →</a>
-            </section>
-
-            {{ $projectPages := where .Site.RegularPages "Section" "projects" }}
-            {{ if gt (len $projectPages) 0 }}
-            <section class="featured-projects">
-                <h2>Projects</h2>
-                <ul>
-                    {{ range first 3 $projectPages }}
-                    <li class="project-item-home">
-                        <a href="{{ .Permalink }}">{{ .Title }}</a>
-                        {{ with .Description }}
-                        <p class="project-summary">{{ . | truncate 120 }}</p>
-                        {{ end }}
-                    </li>
-                    {{ end }}
-                </ul>
-                <a href="/projects/" class="section-link">View all projects →</a>
-            </section>
+                </li>
+                {{ end }}
+            {{ else }}
+                <li><em>Coming soon...</em></li>
             {{ end }}
-        </section>
+        </ul>
+        <a href="/posts/" class="section-link">View all posts →</a>
+    </section>
 
-        <section class="sidebar">
-            {{ $tags := $.Site.Taxonomies.tags.ByCount }}
-            {{ if gt (len $tags) 0 }}
-            <div class="popular-topics">
-                <h2>Popular Topics</h2>
-                <div class="tag-cloud">
-                    {{ range first 12 $tags }}
-                    <a href="{{ .Page.Permalink }}" class="tag">{{ .Page.Title }} ({{ .Count }})</a>
-                    {{ end }}
-                </div>
-            </div>
+    {{ $projectPages := where .Site.RegularPages "Section" "projects" }}
+    {{ if gt (len $projectPages) 0 }}
+    <section class="featured-projects">
+        <h2>Projects</h2>
+        <ul>
+            {{ range first 3 $projectPages }}
+            <li class="project-item-home">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{ with .Description }}
+                <p class="project-summary">{{ . | truncate 120 }}</p>
+                {{ end }}
+            </li>
             {{ end }}
-        </section>
-    </div>
-</div>
+        </ul>
+        <a href="/projects/" class="section-link">View all projects →</a>
+    </section>
+    {{ end }}
 {{ end }}
