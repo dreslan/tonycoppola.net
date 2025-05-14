@@ -4,7 +4,7 @@ date: 2025-05-06T23:47:27-0400
 draft: false
 ---
 
-I'm a technologist and generally curious person. I often go down rabbit holes and talk my friends and family into frustration when actively researhing a new topic. I created this website as another outlet for my curiousity.
+I'm a technologist and generally curious person. I often go down rabbit holes and spend days or weeks on a topic or trying to answer a question. I created this website as another outlet for my curiousity.
 
 Recently, I've had a growing interest in the field of AI safety and alignment.
 
