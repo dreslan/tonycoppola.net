@@ -2,17 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tonycoppola.net/hire-me/</loc>
-    <lastmod>2025-05-11T17:31:17-04:00</lastmod>
-  </url><url>
     <loc>https://tonycoppola.net/support/</loc>
     <lastmod>2025-05-07T00:05:26-04:00</lastmod>
   </url><url>
-    <loc>https://tonycoppola.net/</loc>
-    <lastmod>2025-05-11T17:31:17-04:00</lastmod>
-  </url><url>
     <loc>https://tonycoppola.net/about/</loc>
-    <lastmod>2025-05-07T00:05:26-04:00</lastmod>
+    <lastmod>2025-05-13T19:59:54-04:00</lastmod>
   </url><url>
     <loc>https://tonycoppola.net/tags/hugo/</loc>
     <lastmod>2025-05-11T17:31:17-04:00</lastmod>
@@ -43,10 +37,10 @@
   </url><url>
     <loc>https://tonycoppola.net/categories/</loc>
   </url><url>
-    <loc>https://tonycoppola.net/projects/</loc>
-    <lastmod>2025-05-11T17:31:17-04:00</lastmod>
+    <loc>https://tonycoppola.net/</loc>
+    <lastmod>2025-05-13T19:59:54-04:00</lastmod>
   </url><url>
-    <loc>https://tonycoppola.net/resume/</loc>
+    <loc>https://tonycoppola.net/projects/</loc>
     <lastmod>2025-05-11T17:31:17-04:00</lastmod>
   </url><url>
     <loc>https://tonycoppola.net/series/</loc>
