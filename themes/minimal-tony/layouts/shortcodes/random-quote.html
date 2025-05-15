@@ -39,33 +39,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const quoteContainer = document.getElementById('random-quote-container');
   const refreshButton = document.getElementById('quote-refresh');
   
-  // This listener is replaced by the one at the bottom
-  
-  function displayRandomQuote(withAnimation = true) {
+  function displayRandomQuote() {
     // Select a random quote
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const quote = quotes[randomIndex];
-
-    if (withAnimation) {
-      // Add fade-out effect
-      quoteContainer.style.opacity = '0';
-
-      setTimeout(() => {
-        updateQuoteContent(quote);
-        // Add fade-in effect
-        quoteContainer.style.opacity = '1';
-      }, 300);
-    } else {
-      // Just update without animation
-      updateQuoteContent(quote);
-    }
-  }
-
-  function updateQuoteContent(quote) {
-    // Update the HTML with the selected quote
+    
+    // Update quote content
     quoteContainer.querySelector('.quote-content').innerHTML = quote.html;
     quoteContainer.querySelector('.quote-author').textContent = `— ${quote.author}`;
-
+    
     // Update source if present
     const sourceElement = quoteContainer.querySelector('.quote-source');
     if (sourceElement) {
@@ -76,14 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }
-
-  // Immediately display a random quote when the page loads - no animation
-  displayRandomQuote(false);
-
-  // Modify the click handler to use animation
-  refreshButton.addEventListener('click', function() {
-    displayRandomQuote(true);
-  });
+  
+  // Display a random quote when the page loads
+  displayRandomQuote();
+  
+  // Add click event to the refresh button
+  refreshButton.addEventListener('click', displayRandomQuote);
 });
 </script>
 {{ end }}
