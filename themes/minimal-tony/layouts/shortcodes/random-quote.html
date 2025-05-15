@@ -39,42 +39,51 @@ document.addEventListener('DOMContentLoaded', function() {
   const quoteContainer = document.getElementById('random-quote-container');
   const refreshButton = document.getElementById('quote-refresh');
   
-  // Add click event to the refresh button
-  refreshButton.addEventListener('click', function() {
-    displayRandomQuote();
-  });
+  // This listener is replaced by the one at the bottom
   
-  function displayRandomQuote() {
+  function displayRandomQuote(withAnimation = true) {
     // Select a random quote
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const quote = quotes[randomIndex];
-    
-    // Add fade-out effect
-    quoteContainer.style.opacity = '0';
-    
-    setTimeout(() => {
-      // Update the HTML with the selected quote
-      quoteContainer.querySelector('.quote-content').innerHTML = quote.html;
-      quoteContainer.querySelector('.quote-author').textContent = `— ${quote.author}`;
-      
-      // Update source if present
-      const sourceElement = quoteContainer.querySelector('.quote-source');
-      if (sourceElement) {
-        if (quote.sourceUrl) {
-          sourceElement.innerHTML = `<a href="${quote.sourceUrl}" target="_blank" rel="noopener">${quote.source}</a>`;
-        } else {
-          sourceElement.textContent = quote.source;
-        }
-      }
-      
-      // Add fade-in effect
-      quoteContainer.style.opacity = '1';
-    }, 300);
+
+    if (withAnimation) {
+      // Add fade-out effect
+      quoteContainer.style.opacity = '0';
+
+      setTimeout(() => {
+        updateQuoteContent(quote);
+        // Add fade-in effect
+        quoteContainer.style.opacity = '1';
+      }, 300);
+    } else {
+      // Just update without animation
+      updateQuoteContent(quote);
+    }
   }
-  
-  // Immediately display a random quote when the page loads
-  // Small timeout to avoid layout shifts during page load
-  setTimeout(displayRandomQuote, 50);
+
+  function updateQuoteContent(quote) {
+    // Update the HTML with the selected quote
+    quoteContainer.querySelector('.quote-content').innerHTML = quote.html;
+    quoteContainer.querySelector('.quote-author').textContent = `— ${quote.author}`;
+
+    // Update source if present
+    const sourceElement = quoteContainer.querySelector('.quote-source');
+    if (sourceElement) {
+      if (quote.sourceUrl) {
+        sourceElement.innerHTML = `<a href="${quote.sourceUrl}" target="_blank" rel="noopener">${quote.source}</a>`;
+      } else {
+        sourceElement.textContent = quote.source;
+      }
+    }
+  }
+
+  // Immediately display a random quote when the page loads - no animation
+  displayRandomQuote(false);
+
+  // Modify the click handler to use animation
+  refreshButton.addEventListener('click', function() {
+    displayRandomQuote(true);
+  });
 });
 </script>
 {{ end }}
