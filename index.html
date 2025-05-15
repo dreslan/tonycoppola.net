@@ -21,7 +21,7 @@
 
 
 
-<link rel="stylesheet" href="https://tonycoppola.net/css/main.min.d97d0dbab25a83529ebc44ea08a543847938be0d709a0284821b04af3399121a.css">
+<link rel="stylesheet" href="https://tonycoppola.net/css/main.min.104f22612516eee4816cc3cf357ac6bbced4506cdcb835dd17ebdfbba0d8142b.css">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,6 +60,8 @@
             
             <a class="nav-link" href="/projects/">Projects</a>
             
+            <a class="nav-link" href="/quotes/">Quotes</a>
+            
             <a class="nav-link" href="/about/">About</a>
             
         </nav>
@@ -87,8 +89,109 @@
 <div class="home-container">
     <div class="intro">
         <p>Tony Coppola is a technologist and generally curious person. He created this website to explore topics of interest. Right now he is primarily interested (alarmed) in how rapidly AI is progressing.</p>
-<blockquote>
-<p>&ldquo;One way of looking at human creativity is as a process of pulling balls out of a giant urn. The balls represent possible ideas, discoveries, technological inventions&hellip; What we haven&rsquo;t extracted, so far, is a black ball: a technology that invariably or by default destroys the civilization that invents it.&rdquo; — <a href="https://nickbostrom.com/papers/vulnerable.pdf">Nick Bostrom</a></p></blockquote>
+
+
+<div id="random-quote-container" class="random-quote">
+  
+  <blockquote class="quote-content">
+      <p>The primary concern is not spooky emergent consciousness but simply the ability to make high-quality decisions. Here, quality refers to the expected outcome utility of actions taken, where the utility function is, presumably, specified by the human designer. Now we have a problem: 1. The utility function may not be perfectly aligned with the values of the human race, which are (at best) very difficult to pin down. 2. Any sufficiently capable intelligent system will prefer to ensure its own continued existence and to acquire physical and computational resources – not for their own sake, but to succeed in its assigned task.</p>
+
+  </blockquote>
+  <div class="quote-meta">
+      <span class="quote-author">— Stuart Russell</span>
+      
+      <span class="quote-source">
+          
+          Human Compatible: Artificial Intelligence and the Problem of Control
+          
+      </span>
+      
+      <button id="quote-refresh" class="quote-refresh" aria-label="Show another quote" title="Show another quote">⟳</button>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  
+  const quotes = [
+    
+    {
+      html: `\u003cp\u003eThe concern is not that AI systems might spontaneously decide to hurt us. The concern is that we might build AI systems that are caught in adversarial dynamics with respect to their users, with us, with society, with other AI systems, or that magnify the ability of some humans to hurt other humans. The concern is that there are possible AI designs that let them be much more powerful than humans, and that we might deploy systems with those designs too quickly.\u003c\/p\u003e\n`,
+      author: "Eliezer Yudkowsky",
+      source: "Superintelligence: The Idea That Eats Smart People",
+      sourceUrl: "https:\/\/www.lesswrong.com\/posts\/nwcEe7AF5jzBfv4X7\/superintelligence-the-idea-that-eats-smart-people",
+      permalink: "https:\/\/tonycoppola.net\/quotes\/yudkowsky-ai-alignment\/"
+    },
+    
+    {
+      html: `\u003cp\u003eWe have modified our environment so radically that we must now modify ourselves in order to exist in this new environment. We can no longer live in the old one. Progress imposes not only new possibilities for the future but new restrictions.\u003c\/p\u003e\n`,
+      author: "Norbert Wiener",
+      source: "The Human Use of Human Beings: Cybernetics and Society",
+      sourceUrl: "",
+      permalink: "https:\/\/tonycoppola.net\/quotes\/wiener-cybernetics\/"
+    },
+    
+    {
+      html: `\u003cp\u003eThe primary concern is not spooky emergent consciousness but simply the ability to make high-quality decisions. Here, quality refers to the expected outcome utility of actions taken, where the utility function is, presumably, specified by the human designer. Now we have a problem: 1. The utility function may not be perfectly aligned with the values of the human race, which are (at best) very difficult to pin down. 2. Any sufficiently capable intelligent system will prefer to ensure its own continued existence and to acquire physical and computational resources – not for their own sake, but to succeed in its assigned task.\u003c\/p\u003e\n`,
+      author: "Stuart Russell",
+      source: "Human Compatible: Artificial Intelligence and the Problem of Control",
+      sourceUrl: "",
+      permalink: "https:\/\/tonycoppola.net\/quotes\/russell-ai-alignment\/"
+    },
+    
+    {
+      html: `\u003cp\u003eOne way of looking at human creativity is as a process of pulling balls out of a giant urn. The balls represent possible ideas, discoveries, technological inventions\u0026hellip; What we haven\u0026rsquo;t extracted, so far, is a black ball: a technology that invariably or by default destroys the civilization that invents it.\u003c\/p\u003e\n`,
+      author: "Nick Bostrom",
+      source: "The Vulnerable World Hypothesis",
+      sourceUrl: "https:\/\/nickbostrom.com\/papers\/vulnerable.pdf",
+      permalink: "https:\/\/tonycoppola.net\/quotes\/bostrom-black-ball\/"
+    },
+    
+  ];
+  
+  
+  const quoteContainer = document.getElementById('random-quote-container');
+  const refreshButton = document.getElementById('quote-refresh');
+  
+  
+  refreshButton.addEventListener('click', function() {
+    displayRandomQuote();
+  });
+  
+  function displayRandomQuote() {
+    
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const quote = quotes[randomIndex];
+    
+    
+    quoteContainer.style.opacity = '0';
+    
+    setTimeout(() => {
+      
+      quoteContainer.querySelector('.quote-content').innerHTML = quote.html;
+      quoteContainer.querySelector('.quote-author').textContent = `— ${quote.author}`;
+      
+      
+      const sourceElement = quoteContainer.querySelector('.quote-source');
+      if (sourceElement) {
+        if (quote.sourceUrl) {
+          sourceElement.innerHTML = `<a href="${quote.sourceUrl}" target="_blank" rel="noopener">${quote.source}</a>`;
+        } else {
+          sourceElement.textContent = quote.source;
+        }
+      }
+      
+      
+      quoteContainer.style.opacity = '1';
+    }, 300);
+  }
+  
+  
+  
+  setTimeout(displayRandomQuote, 50);
+});
+</script>
+
 
     </div>
 
@@ -130,6 +233,22 @@
         <section class="popular-topics">
             <h2>Topics</h2>
             <div class="tag-cloud">
+                
+                <a href="https://tonycoppola.net/tags/ai-safety/" class="tag">Ai-Safety (3)</a>
+                
+                <a href="https://tonycoppola.net/tags/alignment/" class="tag">Alignment (2)</a>
+                
+                <a href="https://tonycoppola.net/tags/technology/" class="tag">Technology (2)</a>
+                
+                <a href="https://tonycoppola.net/tags/automation/" class="tag">Automation (1)</a>
+                
+                <a href="https://tonycoppola.net/tags/cybernetics/" class="tag">Cybernetics (1)</a>
+                
+                <a href="https://tonycoppola.net/tags/existential-risk/" class="tag">Existential-Risk (1)</a>
+                
+                <a href="https://tonycoppola.net/tags/intelligence/" class="tag">Intelligence (1)</a>
+                
+                <a href="https://tonycoppola.net/tags/superintelligence/" class="tag">Superintelligence (1)</a>
                 
                 <a href="https://tonycoppola.net/tags/tag1/" class="tag">Tag1 (1)</a>
                 

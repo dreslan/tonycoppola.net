@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intelligence on Tony Coppola</title>
+    <link>https://tonycoppola.net/tags/intelligence/</link>
+    <description>Recent content in Intelligence on Tony Coppola</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 May 2025 11:31:51 -0400</lastBuildDate>
+    <atom:link href="https://tonycoppola.net/tags/intelligence/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Alignment</title>
+      <link>https://tonycoppola.net/quotes/russell-ai-alignment/</link>
+      <pubDate>Sat, 20 May 2023 12:00:00 -0400</pubDate>
+      <guid>https://tonycoppola.net/quotes/russell-ai-alignment/</guid>
+      <description>&lt;p&gt;The primary concern is not spooky emergent consciousness but simply the ability to make high-quality decisions. Here, quality refers to the expected outcome utility of actions taken, where the utility function is, presumably, specified by the human designer. Now we have a problem: 1. The utility function may not be perfectly aligned with the values of the human race, which are (at best) very difficult to pin down. 2. Any sufficiently capable intelligent system will prefer to ensure its own continued existence and to acquire physical and computational resources – not for their own sake, but to succeed in its assigned task.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

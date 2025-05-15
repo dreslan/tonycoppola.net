@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Tony Coppola</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 May 2025 17:31:17 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 15 May 2025 11:31:51 -0400</lastBuildDate>
     <atom:link href="https://tonycoppola.net/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tag1</title>
@@ -20,6 +20,62 @@
       <link>https://tonycoppola.net/tags/tag2/</link>
       <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
       <guid>https://tonycoppola.net/tags/tag2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ai-Safety</title>
+      <link>https://tonycoppola.net/tags/ai-safety/</link>
+      <pubDate>Wed, 05 Jul 2023 12:00:00 -0400</pubDate>
+      <guid>https://tonycoppola.net/tags/ai-safety/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alignment</title>
+      <link>https://tonycoppola.net/tags/alignment/</link>
+      <pubDate>Wed, 05 Jul 2023 12:00:00 -0400</pubDate>
+      <guid>https://tonycoppola.net/tags/alignment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Superintelligence</title>
+      <link>https://tonycoppola.net/tags/superintelligence/</link>
+      <pubDate>Wed, 05 Jul 2023 12:00:00 -0400</pubDate>
+      <guid>https://tonycoppola.net/tags/superintelligence/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>https://tonycoppola.net/tags/automation/</link>
+      <pubDate>Sat, 10 Jun 2023 12:00:00 -0400</pubDate>
+      <guid>https://tonycoppola.net/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cybernetics</title>
+      <link>https://tonycoppola.net/tags/cybernetics/</link>
+      <pubDate>Sat, 10 Jun 2023 12:00:00 -0400</pubDate>
+      <guid>https://tonycoppola.net/tags/cybernetics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technology</title>
+      <link>https://tonycoppola.net/tags/technology/</link>
+      <pubDate>Sat, 10 Jun 2023 12:00:00 -0400</pubDate>
+      <guid>https://tonycoppola.net/tags/technology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Intelligence</title>
+      <link>https://tonycoppola.net/tags/intelligence/</link>
+      <pubDate>Sat, 20 May 2023 12:00:00 -0400</pubDate>
+      <guid>https://tonycoppola.net/tags/intelligence/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Existential-Risk</title>
+      <link>https://tonycoppola.net/tags/existential-risk/</link>
+      <pubDate>Sat, 15 Apr 2023 12:00:00 -0400</pubDate>
+      <guid>https://tonycoppola.net/tags/existential-risk/</guid>
       <description></description>
     </item>
   </channel>

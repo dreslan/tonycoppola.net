@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Philosophy on Tony Coppola</title>
+    <link>https://tonycoppola.net/categories/philosophy/</link>
+    <description>Recent content in Philosophy on Tony Coppola</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 May 2025 11:31:51 -0400</lastBuildDate>
+    <atom:link href="https://tonycoppola.net/categories/philosophy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Technology and Values</title>
+      <link>https://tonycoppola.net/quotes/wiener-cybernetics/</link>
+      <pubDate>Sat, 10 Jun 2023 12:00:00 -0400</pubDate>
+      <guid>https://tonycoppola.net/quotes/wiener-cybernetics/</guid>
+      <description>&lt;p&gt;We have modified our environment so radically that we must now modify ourselves in order to exist in this new environment. We can no longer live in the old one. Progress imposes not only new possibilities for the future but new restrictions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Black Ball in the Urn</title>
+      <link>https://tonycoppola.net/quotes/bostrom-black-ball/</link>
+      <pubDate>Sat, 15 Apr 2023 12:00:00 -0400</pubDate>
+      <guid>https://tonycoppola.net/quotes/bostrom-black-ball/</guid>
+      <description>&lt;p&gt;One way of looking at human creativity is as a process of pulling balls out of a giant urn. The balls represent possible ideas, discoveries, technological inventions&amp;hellip; What we haven&amp;rsquo;t extracted, so far, is a black ball: a technology that invariably or by default destroys the civilization that invents it.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
