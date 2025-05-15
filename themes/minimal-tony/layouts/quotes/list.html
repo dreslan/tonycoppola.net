@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="container">
+    <header class="page-header">
+        <h1>{{ .Title }}</h1>
+    </header>
+
+    <div class="quote-list">
+        {{ range sort .Pages "Params.author" }}
+        <div class="quote-item">
+            <blockquote class="quote-content">
+                {{ .Content }}
+            </blockquote>
+            <div class="quote-meta">
+                <span class="quote-author">— {{ .Params.author }}</span>
+                {{ if .Params.source }}
+                <span class="quote-source">
+                    {{ if .Params.source_url }}
+                    <a href="{{ .Params.source_url }}" target="_blank" rel="noopener">{{ .Params.source }}</a>
+                    {{ else }}
+                    {{ .Params.source }}
+                    {{ end }}
+                </span>
+                {{ end }}
+            </div>
+            <div class="quote-topics">
+                {{ range .Params.tags }}
+                <a href="{{ (urlize (printf "tags/%s" .)) | absURL }}" class="tag">{{ . }}</a>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

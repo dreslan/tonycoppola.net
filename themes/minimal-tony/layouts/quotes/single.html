@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="container">
+    <article class="quote-page">
+        <div class="quote-content">
+            <blockquote>
+                {{ .Content }}
+            </blockquote>
+        </div>
+        <div class="quote-meta">
+            <h2 class="quote-author">— {{ .Params.author }}</h2>
+            {{ if .Params.source }}
+            <div class="quote-source">
+                From: 
+                {{ if .Params.source_url }}
+                <a href="{{ .Params.source_url }}" target="_blank" rel="noopener">{{ .Params.source }}</a>
+                {{ else }}
+                {{ .Params.source }}
+                {{ end }}
+            </div>
+            {{ end }}
+            
+            <div class="quote-date">
+                Added on {{ .Date.Format "January 2, 2006" }}
+            </div>
+            
+            <div class="quote-topics">
+                {{ range .Params.tags }}
+                <a href="{{ (urlize (printf "tags/%s" .)) | absURL }}" class="tag">{{ . }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </article>
+</div>
+{{ end }}
